@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans Arabic', sans-serif;
+    background-color: var(--bg-color);
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+:root {
+    --bg-color: #f1f5f9;
+    --green-: #32CD32;
+    --red-: #D10000;
+}
+
+h1.title-main {
+    text-align: center;
+    font-size: 40px;
+    border: 1px solid white;
+    padding: 5px 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    background: white;
+}
+
+/* admin page styling starts here */
+.admin-page {
+    height: 100vh;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.admin-page .tabs {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 445px;
+    font-size: 28px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+.admin-page .tabs .tab {
+    cursor: pointer;
+}
+
+.admin-page .tabs .tab a {
+    padding: 10px;
+}
+
+.admin-page .tabs .tab:hover {
+    background-color: #eee;
+}
+
+.admin-page .tab.active {
+    background-color: #eee;
+}
+
+.admin-page .container {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 12px 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    gap: 20px;
+    padding: 35px;
+}
+
+.admin-page .container .title {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.admin-page .container .login,
+.btn {
+    background-color: #255599;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: fit-content;
+}
+
+.admin-page .container .login:hover {
+    background-color: #486da1;
+}
+
+/* admin page styling ends here */
+
+/* default form styling  */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.row span {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.row input {
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.row input::placeholder {
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.row input:focus::placeholder {
+    opacity: 0;
+}
+
+.row input:focus {
+    outline: none;
+}
+
+.queryResult {
+    border-radius: 15px;
+    color: white;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.queryResult.success {
+    background-color: rgb(85, 218, 85);
+}
+
+.queryResult.failed {
+    background-color: rgb(231, 67, 67);
+}
+
+/* default form styling  */
+
+/* admin panel styling starts here  */
+.admin-panel {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px;
+}
+
+.admin-panel .header {
+    position: relative;
+}
+
+.admin-panel .header .logout {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--red-);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.admin-panel .header .logout a {
+    padding: 5px 10px;
+}
+
+.admin-panel .title {
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.admin-panel .content {
+    flex: 1;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+.tabs .tab.active {
+    background-color: #eee;
+}
+
+.admin-panel .tabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.admin-panel .tab {
+
+    font-size: 22px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.admin-panel .tab a {
+    padding: 10px 20px;
+}
+
+.admin-panel .tab:hover {
+    background-color: #eee;
+}
+
+.form-users {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+    margin: 0 auto;
+    padding: 15px 0px;
+}
+
+.form-users .title {
+    font-size: 25px;
+}
+
+.content .add-user {
+    margin: 0 auto;
+    margin-bottom: 15px;
+    padding: 5px 25px;
+}
+
+@media (max-width: 520px) {
+    .admin-page .container {
+        width: calc(100% - 10px);
+        padding: 10px;
+    }
+
+    .admin-page .row {
+        gap: 2px;
+    }
+
+    .admin-panel .tabs {
+        justify-content: space-between;
+    }
+
+    .admin-panel .tab {
+        font-size: 18px;
+    }
+
+    .admin-panel .row {
+        gap: 0;
+    }
+
+    .admin-panel .row span,
+    .admin-page .row span {
+        font-size: 17px;
+    }
+
+    .form-users {
+        width: 100%;
+        padding-inline: 10px;
+    }
+
+    .admin-page .tabs {
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 410px) {
+
+    .admin-panel .row span,
+    .admin-page .row span {
+        font-size: 15px;
+    }
+
+    .admin-panel .row input,
+    .admin-page .row input {
+        padding: 7px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1.title-main {
+        font-size: 35px;
+    }
+
+    .admin-panel .header .logout {
+        position: static;
+        width: fit-content;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+}
+
+/* admin panel styling ends here  */
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #486da1;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    text-align: right;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: white;
+}
+
+table tr:first-child th {
+    background-color: #486da1;
+    color: white;
+    border: 1px solid #eee;
+    padding: 10px;
+}
+
+table tr td {
+    padding: 10px;
+    border: 1px solid #eee;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+table .deleBtn {
+    background-color: var(--red-);
+    color: white;
+    cursor: pointer;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 2px 15px;
+}
+
+@media (max-width: 768px) {
+
+    table tr:first-child th {
+        padding: 10px 0px;
+        text-align: center;
+    }
+
+    table tr td {
+        font-size: 14.5px;
+    }
+
+    table .deleBtn {
+        padding: 2px 10px;
+    }
+}
+
+
+/* confirm card style  start */
+.page {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    width: 70%;
+    padding: 15px;
+}
+.page.confirm {
+    width: 50%;
+}
+.confirm .title {
+    margin-bottom: 0;
+}
+
+.confirm p {
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.confirm .op {
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.confirm .op .db_query {
+    background-color: var(--red-);
+}
+
+.confirm .op .back {
+    background-color: #eee;
+    color: black;
+    padding-inline: 25px;
+}
+
+
+@media (max-width: 992px) {
+    .page {
+        width: calc(100% - 20px);
+    }
+    .page.confirm {
+        width: calc(100% - 20px);;
+    }
+}
+@media (max-width: 768px) {
+    .page {
+        padding: 20px 10px;
+    }
+    
+    .confirm .title {
+        font-size: 25px;
+    }
+
+    .confirm p {
+        font-size: 22px;
+    }
+}
+/* confirm card style  end */
